@@ -15,7 +15,13 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
+    set -e
+    echo "Installing dependencies..."
     npm install
+
+    echo "Building project..."
     npm run build
+
+    echo "Running tests..."
     npm test
-  displayName: 'npm install, build, and test'
+  displayName: 'Install, Build, and Test'
