@@ -14,14 +14,11 @@ steps:
     versionSpec: '8.x'
   displayName: 'Install Node.js'
 
-- script: |
-    set -e
-    echo "Installing dependencies..."
-    npm install
+- script: npm install
+  displayName: 'Install dependencies'
 
-    echo "Building project..."
-    npm run build
+- script: npm run build
+  displayName: 'Build project'
 
-    echo "Running tests..."
-    npm test
-  displayName: 'Install, Build, and Test'
+- script: npm test
+  displayName: 'Run tests'
